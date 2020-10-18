@@ -1,0 +1,23 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node hello.js",
+    "create" : "touch testFile.js",
+    "delete" : "rm -rf testFile.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://AlekseyGurev@github.com/WebHeroSchool/GurevAleksey_React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebHeroSchool/GurevAleksey_React/issues"
+  },
+  "homepage": "https://github.com/WebHeroSchool/GurevAleksey_React#readme"
+}
