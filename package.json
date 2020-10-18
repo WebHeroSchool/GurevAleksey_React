@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node hello.js",
-    "create" : "touch testFile.js",
-    "delete" : "rm -rf testFile.js"
+    "build" : "mkdir build",
+    "delete" : "rm -rf build"
 
   },
   "repository": {
