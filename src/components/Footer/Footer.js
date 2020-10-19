@@ -1,8 +1,8 @@
 import React from 'react';
 
-let Footer = () => (
+let Footer = ({ count }) => (
   <footer>
-    <p>Footer</p>
+    <p>Осталось выполнить: { count } задания</p>
   </footer>
 );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-let Item = () => (
-  <p>Важное дело!</p>
+let Item = ({ TodoItem }) => (
+<p>{ TodoItem }</p>
 );
 
 export default Item;
