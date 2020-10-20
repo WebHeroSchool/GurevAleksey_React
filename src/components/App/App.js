@@ -2,6 +2,7 @@ import React from 'react';
 import InputItems from '../InputItems/InputItems';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
+import '../App/App.css';
 
 let TodoItems = [
   {
@@ -20,7 +21,7 @@ let Numbers = 3;
 
 
 let App = () => (
-  <section>
+  <section className = 'container'>
     <h1>Дела:</h1>
     <InputItems />
       <ItemList TodoItems = { TodoItems }/>

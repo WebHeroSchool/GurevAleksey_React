@@ -1,0 +1,13 @@
+html,
+body {
+  margin: 0;
+  font-family: 'roboto-font', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+}
+
+.container {
+  margin: auto;
+  max-width: 500px;
+}
