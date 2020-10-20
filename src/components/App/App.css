@@ -11,3 +11,8 @@ body {
   margin: auto;
   max-width: 500px;
 }
+
+.main-title {
+  font-family: 'caveat';
+  font-weight: bold;
+}
