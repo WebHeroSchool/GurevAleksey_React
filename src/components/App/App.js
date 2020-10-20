@@ -3,6 +3,7 @@ import InputItems from '../InputItems/InputItems';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import '../App/App.css';
+import '../Fonts/Fonts.css';
 
 let TodoItems = [
   {
@@ -22,7 +23,7 @@ let Numbers = 3;
 
 let App = () => (
   <section className = 'container'>
-    <h1>Дела:</h1>
+    <h1 className = 'main-title'>To DO:</h1>
     <InputItems />
       <ItemList TodoItems = { TodoItems }/>
     <Footer count = { Numbers } />

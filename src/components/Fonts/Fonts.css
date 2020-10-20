@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'roboto-font';
   src:
-    url('/src/components/Fonts/bold/roboto-bold-webfont.woff2') format('woff2'),
-    url('/src/components/Fonts/bold/roboto-bold-webfont.woff') format('woff');
+    url('../Fonts/bold/roboto-bold-webfont.woff2') format('woff2'),
+    url('../Fonts/bold/roboto-bold-webfont.woff') format('woff');
   font-display: swap;
   font-weight: bold;
   font-style: normal;
@@ -11,8 +11,8 @@
 @font-face {
   font-family: 'roboto-font';
   src:
-    url('/src/components/Fonts/regular/roboto-regular-webfont.woff2') format('woff2'),
-    url('/src/components/Fonts/regular/roboto-regular-webfont.woff') format('woff');
+    url('../Fonts/regular/roboto-regular-webfont.woff2') format('woff2'),
+    url('../Fonts/regular/roboto-regular-webfont.woff') format('woff');
   font-display: swap;
   font-weight: normal;
   font-style: normal;
@@ -21,8 +21,8 @@
 @font-face {
   font-family: 'roboto-font';
   src:
-    url('/src/components/Fonts/medium/roboto-medium-webfont.woff2') format('woff2'),
-    url('/src/components/Fonts/medium/roboto-medium-webfont.woff') format('woff');
+    url('../Fonts/medium/roboto-medium-webfont.woff2') format('woff2'),
+    url('../Fonts/medium/roboto-medium-webfont.woff') format('woff');
   font-display: swap;
   font-weight: medium;
   font-style: normal;
@@ -31,10 +31,19 @@
 @font-face {
   font-family: 'roboto-font';
   src:
-    url('/src/components/Fonts/light/roboto-light-webfont.woff2') format('woff2'),
-    url('/src/components/Fonts/light/roboto-light-webfont.woff') format('woff');
+    url('../Fonts/light/roboto-light-webfont.woff2') format('woff2'),
+    url('../Fonts/light/roboto-light-webfont.woff') format('woff');
   font-display: swap;
   font-weight: lighter;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'caveat';
+  src:
+    url('../Fonts/caveat/caveat-bold-webfont.woff2') format('woff2'),
+    url('../Fonts/caveat/caveat-bold-webfont.woff') format('woff');
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
+}
