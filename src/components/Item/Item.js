@@ -1,7 +1,7 @@
 import React from 'react';
 
-let Item = ({ TodoItem }) => (
-<p>{ TodoItem }</p>
+let Item = ({ item }) => (
+<p>{ item }</p>
 );
 
 export default Item;
