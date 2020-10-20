@@ -12,7 +12,6 @@ body {
   max-width: 500px;
 }
 
-.main-title {
-  font-family: 'caveat';
+.title {
   font-weight: bold;
 }

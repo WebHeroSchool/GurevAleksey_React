@@ -38,12 +38,3 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'caveat';
-  src:
-    url('../Fonts/caveat/caveat-bold-webfont.woff2') format('woff2'),
-    url('../Fonts/caveat/caveat-bold-webfont.woff') format('woff');
-  font-display: swap;
-  font-weight: bold;
-  font-style: normal;
-}
