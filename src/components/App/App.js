@@ -1,9 +1,21 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import InputItems from '../InputItems/InputItems';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
-let TodoItems = ['Задача 1','Задача 2','Задача 3','Задача 4'];
+let TodoItems = [
+  {
+    value : 'Задача 1'
+  },
+  {
+    value :'Задача 2'
+  },
+  {
+    value : 'Задача 3'
+  },
+  {
+    value : 'Задача 4'
+  }];
 let Numbers = 3;
 
 
