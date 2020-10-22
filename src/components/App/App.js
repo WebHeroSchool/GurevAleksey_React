@@ -7,16 +7,20 @@ import '../Fonts/Fonts.css';
 
 let TodoItems = [
   {
-    value : 'Задача 1'
+    value : 'Задача 1',
+    isDone: true
   },
   {
-    value :'Задача 2'
+    value :'Задача 2',
+    isDone: false
   },
   {
-    value : 'Задача 3'
+    value : 'Задача 3',
+    isDone: false
   },
   {
-    value : 'Задача 4'
+    value : 'Задача 4',
+    isDone: true
   }];
 let Numbers = 3;
 

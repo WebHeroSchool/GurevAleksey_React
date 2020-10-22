@@ -1,0 +1,8 @@
+.item {
+  opacity: 100%;
+}
+
+.done {
+  opacity: 30%;
+  text-decoration: line-through;
+}
