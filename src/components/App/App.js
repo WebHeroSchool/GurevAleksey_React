@@ -27,7 +27,7 @@ let Numbers = 3;
 
 let App = () => (
   <section className = {styles.container}>
-    <h1 className = {styles.title}>To DO:</h1>
+    <h1 className = {styles.title}>Задачи</h1>
     <InputItems />
       <ItemList TodoItems = { TodoItems }/>
     <Footer count = { Numbers } />
