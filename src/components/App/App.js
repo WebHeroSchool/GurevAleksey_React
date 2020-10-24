@@ -7,8 +7,8 @@ import '../Fonts/Fonts.css';
 
 
 class App extends React.Component {
-  render() {
-    let TodoItems = [
+  state = {
+    TodoItems: [
       {
         value : 'Задача 1',
         isDone: true
@@ -24,15 +24,16 @@ class App extends React.Component {
       {
         value : 'Задача 4',
         isDone: true
-      }];
-    let Numbers = 3;
-
+      }],
+      Numbers: [ 3 ]
+  };
+  render() {
     return (
       <section className = {styles.container}>
     <h1 className = {styles.title}>Задачи</h1>
     <InputItems />
-      <ItemList TodoItems = { TodoItems }/>
-    <Footer count = { Numbers } />
+      <ItemList TodoItems = { this.state.TodoItems }/>
+    <Footer count = { this.state.Numbers } />
   </section>
     )
   }
