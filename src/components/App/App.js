@@ -27,12 +27,15 @@ class App extends React.Component {
       }],
       Numbers: [ 3 ]
   };
+
+  onClickDone = isDone => console.log(isDone);
+  
   render() {
     return (
       <section className = {styles.container}>
     <h1 className = {styles.title}>Задачи</h1>
     <InputItems />
-      <ItemList TodoItems = { this.state.TodoItems }/>
+      <ItemList TodoItems = { this.state.TodoItems} onClickDone={this.onClickDone}/>
     <Footer count = { this.state.Numbers } />
   </section>
     )
