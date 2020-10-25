@@ -5,13 +5,14 @@ import Switch from '@material-ui/core/Switch';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-let Item = ({ item, isDone }) => (
+let Item = ({ item, isDone, onClickDone }) => (
 <div className = {styles.container}>
   <Switch
     // checked={state.checkedB}
     // onChange={handleChange}
     color="primary"
     name="checkedB"
+    onClick = {() => onClickDone(isDone)}
   />
 
   <p className={
