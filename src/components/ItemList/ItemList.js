@@ -9,7 +9,14 @@ let ItemList = ({ TodoItems, onClickDone }) => (<ul className = {
   })
 }>
   {TodoItems.map(item => 
-    <li className={styles.li} key={item.value}><Item item = {item.value} isDone = {item.isDone} onClickDone = {onClickDone} /></li> )}
+    <li className={styles.li} key={item.value}>
+      <Item 
+      item = {item.value} 
+      isDone = {item.isDone}
+      id = {item.id} 
+      onClickDone = {onClickDone} 
+      />
+    </li> )}
   </ul>
 );
 
