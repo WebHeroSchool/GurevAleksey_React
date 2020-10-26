@@ -43,13 +43,23 @@ class App extends React.Component {
     });
     this.setState({TodoItems : newItemList});
   };
+
+  onClickRemove = id => {
+    let newItemList = [...this.state.TodoItems];
+    newItemList = newItemList.filter((item) => item.id !== id);
+    this.setState({TodoItems:newItemList});
+  };
   
   render() {
     return (
       <section className = {styles.container}>
     <h1 className = {styles.title}>Задачи</h1>
     <InputItems />
-      <ItemList TodoItems = { this.state.TodoItems} onClickDone={this.onClickDone}/>
+      <ItemList 
+        TodoItems = { this.state.TodoItems} 
+        onClickDone = {this.onClickDone}
+        onClickRemove = {this.onClickRemove}
+      />
     <Footer count = { this.state.Numbers } />
   </section>
     )

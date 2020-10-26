@@ -5,7 +5,7 @@ import Switch from '@material-ui/core/Switch';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-let Item = ({ item, isDone, id, onClickDone }) => (
+let Item = ({ item, isDone, id, onClickDone, onClickRemove }) => (
 <div className = {styles.container}>
   <Switch
     // checked={state.checkedB}
@@ -24,7 +24,9 @@ let Item = ({ item, isDone, id, onClickDone }) => (
   </p>
   
   <IconButton style={{ padding: 7}} aria-label="delete">
-    <DeleteIcon />
+    <DeleteIcon
+      onClick = {() => onClickRemove(id)} 
+    />
   </IconButton>  
 </div>
 );
