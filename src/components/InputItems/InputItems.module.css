@@ -1,0 +1,9 @@
+.container {
+  display: inline-block;
+  width: 450px;
+}
+
+.containerFab {
+  display: inline-block;
+  padding-left: 10px;
+}
