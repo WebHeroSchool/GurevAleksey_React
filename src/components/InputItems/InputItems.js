@@ -7,12 +7,14 @@ import AddIcon from '@material-ui/icons/Add';
 class InputItems extends React.Component {
   state = {
     inputValue: '',
-    inputError: false
+    inputError: false,
+    helperText: ''
   };
 
   onButtonClick = () => {
     if (this.state.inputValue ==''){
       this.setState({inputError:true})
+      this.setState({helperText:'пустое поле'})
     }else {
       this.props.onClickAdd(this.state.inputValue);
 
@@ -30,7 +32,8 @@ class InputItems extends React.Component {
             style={{textTransform: 'capitalize'}}
             id="inputField" 
             error = {this.state.inputError}
-            helperText="пустое поле"
+            helperText = {this.state.helperText}
+            // helperText="пустое поле"
             id="standard-basic" 
             label="Добавить задачу"
             fullWidth
@@ -38,6 +41,7 @@ class InputItems extends React.Component {
             value={this.state.inputValue}
             onChange={event => {
               this.setState({inputError:false})
+              this.setState({helperText:''})
               this.setState({inputValue: event.target.value.toUpperCase()})}
             }
           />
