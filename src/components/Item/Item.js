@@ -31,4 +31,8 @@ let Item = ({ item, isDone, id, onClickDone, onClickRemove }) => (
 </div>
 );
 
+Item.defaultProps = {
+  isDone: false
+}
+
 export default Item;
