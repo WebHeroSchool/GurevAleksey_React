@@ -6,6 +6,7 @@ import styles from '../App/App.module.css';
 import '../Fonts/Fonts.css';
 
 
+
 class App extends React.Component {
   state = {
     TodoItems: [
@@ -29,7 +30,7 @@ class App extends React.Component {
         value : 'Задача 4',
         isDone: false
       }],
-      Numbers: [ 3 ]
+      count: 4
   };
 
   onClickDone = id => {
@@ -44,24 +45,36 @@ class App extends React.Component {
     this.setState({TodoItems : newItemList});
   };
 
-  onClickRemove = id => {
-    let newItemList = [...this.state.TodoItems];
-    newItemList = newItemList.filter((item) => item.id !== id);
-    this.setState({TodoItems:newItemList});
-  };
-  
+  onClickRemove = id => this.setState(state => ({
+    TodoItems: state.TodoItems.filter(item => item.id !== id)
+  }));
+
+  onClickAdd = value => this.setState(state => ({
+    TodoItems: [
+      ...state.TodoItems,
+      {
+        value: value,
+        isDone: false,
+        id: state.count + 1
+      }
+    ],
+    count: state.count +1
+  }));
+
   render() {
     return (
       <section className = {styles.container}>
-    <h1 className = {styles.title}>Задачи</h1>
-    <InputItems />
-      <ItemList 
-        TodoItems = { this.state.TodoItems} 
-        onClickDone = {this.onClickDone}
-        onClickRemove = {this.onClickRemove}
-      />
-    <Footer count = { this.state.Numbers } />
-  </section>
+        <h1 className = {styles.title}>Задачи</h1>
+          <InputItems
+            onClickAdd = {this.onClickAdd} 
+          />
+          <ItemList 
+            TodoItems = { this.state.TodoItems} 
+            onClickDone = {this.onClickDone}
+            onClickRemove = {this.onClickRemove}
+          />
+        <Footer count = { this.state.count } />
+      </section>
     )
   }
 }

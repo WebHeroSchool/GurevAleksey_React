@@ -23,10 +23,10 @@ let Item = ({ item, isDone, id, onClickDone, onClickRemove }) => (
     }>{ item }
   </p>
   
-  <IconButton style={{ padding: 7}} aria-label="delete">
-    <DeleteIcon
-      onClick = {() => onClickRemove(id)} 
-    />
+  <IconButton style={{ padding: 7}} aria-label="delete"
+    onClick = {() => onClickRemove(id)} 
+  >
+    <DeleteIcon/>
   </IconButton>  
 </div>
 );

@@ -9,7 +9,7 @@ let ItemList = ({ TodoItems, onClickDone, onClickRemove }) => (<ul className = {
   })
 }>
   {TodoItems.map(item => 
-    <li className={styles.li} key={item.value}>
+    <li className={styles.li} key={item.id}>
       <Item 
       item = {item.value} 
       isDone = {item.isDone}
