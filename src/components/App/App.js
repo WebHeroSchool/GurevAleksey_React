@@ -30,7 +30,7 @@ class App extends React.Component {
         value : 'Задача 4',
         isDone: false
       }],
-      // count: 4
+      count: 4
   };
 
   onClickDone = id => {
