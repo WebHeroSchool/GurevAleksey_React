@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Item.module.css'
 import Switch from '@material-ui/core/Switch';
@@ -31,8 +32,12 @@ let Item = ({ item, isDone, id, onClickDone, onClickRemove }) => (
 </div>
 );
 
-Item.defaultProps = {
-  isDone: false
+Item.propTypes = {
+  id: PropTypes.number.isRequired,
+  isDone: PropTypes.bool.isRequired,
+  item: PropTypes.string.isRequired,
+  onClickDone: PropTypes.func,
+  onClickRemove: PropTypes.func 
 }
 
 export default Item;
