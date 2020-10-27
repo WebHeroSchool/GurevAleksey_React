@@ -14,8 +14,10 @@ class InputItems extends React.Component {
   onButtonClick = () => {
     let flag = false;
     for (let items of this.props.TodoItems.values()) {
-      if (items.value.indexOf(this.state.inputValue)=== 0) {
-        flag = true
+      if (this.state.inputValue !==''){
+        if (items.value.indexOf(this.state.inputValue) === 0) {
+          flag = true;
+        } 
       }
     }
 
@@ -27,7 +29,6 @@ class InputItems extends React.Component {
         }
     }else {
       this.props.onClickAdd(this.state.inputValue);
-
       this.setState({
         inputValue:''
     });
