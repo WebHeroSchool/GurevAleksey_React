@@ -66,6 +66,7 @@ class App extends React.Component {
       <section className = {styles.container}>
         <h1 className = {styles.title}>Задачи</h1>
           <InputItems
+            TodoItems = { this.state.TodoItems} 
             onClickAdd = {this.onClickAdd} 
           />
           <ItemList 

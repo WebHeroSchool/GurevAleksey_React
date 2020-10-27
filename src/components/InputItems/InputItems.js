@@ -12,9 +12,19 @@ class InputItems extends React.Component {
   };
 
   onButtonClick = () => {
-    if (this.state.inputValue ==''){
+    let flag = false;
+    for (let items of this.props.TodoItems.values()) {
+      if (items.value.indexOf(this.state.inputValue)=== 0) {
+        flag = true
+      }
+    }
+
+    if ((this.state.inputValue ==='') || (flag)) {
       this.setState({inputError:true})
       this.setState({helperText:'пустое поле'})
+        if (flag) {
+          this.setState({helperText:'Такая задача есть'})
+        }
     }else {
       this.props.onClickAdd(this.state.inputValue);
 
@@ -23,13 +33,12 @@ class InputItems extends React.Component {
     });
     }
   }
-
+  
   render() {
     return (
       <div>
         <div className={styles.container}>
           <TextField
-            style={{textTransform: 'capitalize'}}
             id="inputField" 
             error = {this.state.inputError}
             helperText = {this.state.helperText}
