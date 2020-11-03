@@ -4,9 +4,9 @@ import styles from './Footer.module.css';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 
-let Footer = ({ count }) => (
+let Footer = ({ countTasks }) => (
   <footer className= {styles.footer}>
-    <span className= {styles.tasks}> Задачи: { count } </span>
+    <span className= {styles.tasks}> Задачи: { countTasks } </span>
     <ButtonGroup span className= {styles.button} size="small" variant="text">
       <Button style={{ textTransform: 'none' }}>Все</Button>
       <Button style={{ textTransform: 'none' }}>Активные</Button>
@@ -20,7 +20,7 @@ let Footer = ({ count }) => (
 );
 
 Footer.propTypes = {
-  count: PropTypes.number.isRequired
+  countTasks: PropTypes.number.isRequired
 };
 
 export default Footer;

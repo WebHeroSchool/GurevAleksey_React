@@ -43,8 +43,6 @@ class InputItems extends React.Component {
             id="inputField" 
             error = {this.state.inputError}
             helperText = {this.state.helperText}
-            // helperText="пустое поле"
-            id="standard-basic" 
             label="Добавить задачу"
             fullWidth
             variant="outlined"
