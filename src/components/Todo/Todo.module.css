@@ -1,0 +1,13 @@
+.container {
+  margin: auto;
+  padding: 10px;
+  max-width: 500px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
