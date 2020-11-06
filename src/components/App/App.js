@@ -1,84 +1,39 @@
-import React, {useState, useEffect} from 'react';
-import InputItems from '../InputItems/InputItems';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
-import styles from '../App/App.module.css';
+import {MenuItem, MenuList} from '@material-ui/core';
+import React from 'react';
 import '../Fonts/Fonts.css';
 
+import Todo from '../Todo/Todo'
+import About from '../About/About'
+import Contacts from '../Contacts/Contacts'
+
+import styles from '../App/App.module.css'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 let App = () => {
-  let [todoItems, setTodoItems]  = useState ([
-    {
-      id: 1,
-      value : 'Задача 1',
-      isDone: false
-    },
-    {
-      id: 2,
-      value :'Задача 2',
-      isDone: false
-    },
-    {
-      id: 3,
-      value : 'Задача 3',
-      isDone: false
-    },
-    {
-      id: 4,
-      value : 'Задача 4',
-      isDone: false
-    },
-  ]);
-
-
-  useEffect (() => {
-    console.log ('Create')
-  }, []);
-
-  useEffect (() => {
-    console.log ('Update')
-  }, [todoItems]);
-
-  let countTasks = todoItems.length;
-
-  let onClickDone = id => setTodoItems(todoItems.map(item => {
-      let newItem = {...item};
-
-      if (item.id === id) {
-        newItem.isDone = !item.isDone;
-      }
-      return newItem})
-    );
-  
-
-  let onClickRemove = id => setTodoItems(todoItems.filter(item => item.id !== id)
-  );
-
-  let onClickAdd = value => {
-    setTodoItems([
-      ...todoItems,
-      {
-        value: value,
-        isDone: false,
-        id: countTasks + 1
-      }
-    ])
-    };
-
-  
   return (
-    <section className = {styles.container}>
-      <h1 className = {styles.title}>Задачи</h1>
-        <InputItems
-          TodoItems = { todoItems} 
-          onClickAdd = {onClickAdd} 
-        />
-        <ItemList 
-          TodoItems = { todoItems} 
-          onClickDone = {onClickDone}
-          onClickRemove = {onClickRemove}
-        />
-      <Footer countTasks = { countTasks } />
-    </section>
+    <Router>
+      <div className={styles.container}>
+        <div className={styles.sidebar}>
+          <MenuList>
+            <Link to='/' className={styles.link}>
+              <MenuItem style={{ fontSize: 20}}>Обо мне</MenuItem>
+            </Link>
+            <Link to='/todo' className={styles.link}>
+              <MenuItem style={{ fontSize: 20}}>Дела</MenuItem>
+            </Link>
+            <Link to='/contacts' className={styles.link}>
+              <MenuItem style={{ fontSize: 20}}>Контакты</MenuItem>
+            </Link>
+          </MenuList>
+        </div>
+
+        <div className={styles.content}>
+          <Route path='/' exact component={About}/>
+          <Route path='/todo' component={Todo}/>
+          <Route path='/contacts' component={Contacts}/>
+        </div>
+      </div>
+    </Router>
   )
 }
 
