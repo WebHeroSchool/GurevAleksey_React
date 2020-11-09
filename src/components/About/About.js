@@ -21,7 +21,7 @@ class About extends React.Component {
 
   componentDidMount () {    
     octokit.repos.listForUser({
-      username: '6thSencedfd'
+      username: '6thSence'
     }).then(({ data }) => {
       this.setState({
         repoList: data,
