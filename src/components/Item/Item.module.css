@@ -7,9 +7,14 @@
 }
 
 .item {
-  width: 400px;
+  width: 600px;
   margin: 0;
   padding-top: 7px;
+  border: none;
+  background-color: #fff;
+  resize: none;
+  font-family: 'roboto-font', sans-serif;
+  font-size: 16px;
 }
 
 .done {
@@ -17,3 +22,31 @@
   text-decoration: line-through;
 }
 
+@media screen and (max-width: 720px) {
+  
+  .item {
+    width: 100%;
+    padding-top: 7px;
+    border: none;
+    background-color: #fff;
+    resize: none;
+    font-family: 'roboto-font', sans-serif;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .item {
+    width: 320px;
+  }
+  
+  .item {
+    width: 100%;
+    padding-top: 7px;
+    border: none;
+    background-color: #fff;
+    resize: none;
+    font-family: 'roboto-font', sans-serif;
+    font-size: 16px;
+  }
+}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -11,19 +15,42 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
   padding-top: 20px;
+  width: 700px;
 }
 
 .sidebar {
-  margin-right: 10px;
-  padding: 20px 20px 20px 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  width: 300px;
 }
 
 .link {
+  padding: 12px 10px;
+  margin-right: 20px;
+  border-radius: 20px;
   text-decoration: none;
+  color: #b7b6b9;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 1s;
+}
+
+.activLink {
+  color: #3f51b5;
+}
+
+.link:hover {
   color: #000;
+}
+
+@media screen and (max-width:720px) {
+  .container {
+    max-width: 90%;
+  }  
 }

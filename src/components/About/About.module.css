@@ -1,0 +1,40 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 700px;
+}
+
+.loader {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.image {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width:600px) {
+  .container {
+    width: 100%;
+  }
+  .imageLoader {
+    max-width: 200px;
+  }  
+}
