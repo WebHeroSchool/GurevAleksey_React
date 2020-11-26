@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+.repo{
+  margin-bottom: 50px;
+  width: 700px;
+  height: 400px;
+  padding-left: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.title {
+  padding-top: 10px;
+  text-align: left;
+}
+
+.list {
+  list-style-type: none;
+  max-width: 600px;
+  max-height: 310px;
+  margin-bottom: 50px;
+  overflow: scroll;
+}
+
+.item {
+  width: 545px;
+  text-align: left;
+  border: 1px solid #b7b6b9;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.text {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.linkText {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  list-style: none;
+}
+.itemInfo {
+  margin-right: 10px;
+  color: #b7b6b9;
+}
+
+.descriptionName {
+  width: 150px;
+  margin-right: 10px;
+}
+
+.color {
+  display: inline-block;
+  position: relative;
+  margin-right: 5px;
+  top: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.star {
+  padding-left: 5px;
+  position: relative;
+  top: -2px;
+}
+
+.fork {
+  padding-left: 5px;
+  position: relative;
+  top: -2px;
+}
+
+@media screen and (max-width:600px) {
+  .repo {
+    width: 100%;
+    margin: auto;
+    min-height: 400px;
+  }
+
+  .title {
+    max-width: 250px;
+    text-align: left;
+  }
+
+  .list {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .item {
+    width: 95%;
+    text-align: center;
+  }
+  .info {
+    width: 220px;
+    padding-left: 20px;
+  }
+} 

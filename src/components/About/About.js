@@ -1,9 +1,11 @@
 import React from 'react';
 import '../Fonts/Fonts.css';
-import CardContent from '@material-ui/core/CardContent';
-import Loader from '../Loader/Loader.gif';
+import Loader from '../Images/Loader.gif';
 import { Octokit } from '@octokit/rest';
-import styles from '../About/About.module.css'
+import styles from '../About/About.module.css';
+import error from '../Images/eror.png';
+import AboutInfo from '../AboutInfo/AboutInfo'
+import AboutRepos from '../AboutRepos/AboutRepos';
 
 let octokit = new Octokit();
 
@@ -13,13 +15,78 @@ class About extends React.Component {
     userName : '',
     avatarUrl : '',
     bio :'',
+    mail:'gurevaleksey@yandex.ru',
+    tel:'+79817931299',
+    location:'',
     isLoading: true,
     repoList: [],
     errorLoad: false,
-    errorText: '' 
   }
 
-  componentDidMount () {    
+  getMonth = (month) => {
+    let rusMonth = '';
+    switch (month) {
+      case '01' :
+        rusMonth = 'январь';
+        break;
+      case '02' :
+        rusMonth = 'февраль';
+        break; 
+      case '03' :
+        rusMonth = 'март';
+      break;
+      case '04' :
+        rusMonth = 'апрель';
+      break;
+      case '05' :
+        rusMonth = 'май';
+      break;
+      case '06' :
+        rusMonth = 'июнь';
+      break;
+      case '07' :
+        rusMonth = 'июль';
+      break;
+      case '08' :
+        rusMonth = 'август';
+      break;
+      case '09' :
+        rusMonth = 'сентябрь';
+      break;
+      case '10' :
+        rusMonth = 'отктябрь';
+      break;
+      case '11' :
+        rusMonth = 'ноябрь';
+      break;
+      case '12' :
+        rusMonth = 'декабрь';
+      break;
+      default:      
+    }
+    return rusMonth
+  }
+
+  colorLanguage = (language) => {
+    let color = '';
+    switch (language) {
+      case 'JavaScript' :
+        color = '#f1e05a';
+        break;
+      case 'HTML' :
+        color = '#e34c26';
+        break; 
+      case 'CSS' :
+        color = '#563d7c';
+      break;
+      default:
+        color = '#fff';     
+    }
+    return color
+  };
+
+
+  componentDidMount () {
     octokit.repos.listForUser({
       username: '6thSence'
     }).then(({ data }) => {
@@ -27,6 +94,7 @@ class About extends React.Component {
         repoList: data,
         isLoading: false,
       })
+      // console.log(data)
     })
     .catch(error => (this.setState({
       isLoading: false,
@@ -35,53 +103,64 @@ class About extends React.Component {
     })));
 
     octokit.users.getByUsername({
-      username: '6thSence'
+      username: 'AlekseyGurev'
     }).then(( user ) => {
       this.setState({
-        userName : user.data.login,
+        userName : user.data.name,
         avatarUrl : user.data.avatar_url,
-        bio: user.data.bio
+        bio: user.data.bio,
+        location: user.data.location
       })
-      console.log(user)
+      // console.log(user)
     })
   }
 
   render() {
-    let { isLoading, repoList,errorLoad,errorText,userName,avatarUrl,bio } = this.state;
+    let { isLoading, repoList,errorLoad,userName,avatarUrl,bio,mail,location,tel} = this.state;
+
     return(
-      <CardContent className={styles.container}>
-        <h1>
-          { isLoading ? <img src={ Loader } alt="Загрузка..." /> : 'Обо мне' }
-        </h1>
-      
-        { !isLoading &&
-          <div>
-            {errorLoad ? <p className={styles.error}>Ошибка загрузки: { errorText } </p> : 
-              <div>
-                <div className={styles.about}>
-                  <div className={styles.bio}>
-                    <p>Пользователь: { userName }</p>
-                    <p>Информация о пользователе: { bio }</p>
-                  </div>
-                  <img src={avatarUrl} alt='foto' width='150' /> 
+        <div className={styles.loader}>
+          { isLoading ? <img src={ Loader } className={styles.imageLoader} alt="Загрузка..." /> : 
+            <div className={styles.container}>
+              { !isLoading &&
+                <div>
+                  {errorLoad ? 
+                    <div className={styles.image}>
+                      <img src={error} alt='картинка'/>
+                      <p>Что-то пошло не так...</p>
+                      <p>Попробуйте <a href='.'>загрузить </a> ещё раз</p>
+                    </div>: 
+                    <div>
+                      <AboutInfo
+                        userName = {userName}
+                        avatarUrl = {avatarUrl}
+                        bio= { bio }
+                        mail= { mail }
+                        tel= { tel }
+                        location = {location}
+                      />
+                     
+                     {repoList == null? 
+                      <div className={styles.image}>
+                        <img src={error} alt='картинка'/>
+                        <p>Репозитории отсутствуют.</p>
+                        <p>Добавьте как минимум один репозиторий на <a href='https://github.com' target='_blank' rel="noopener noreferrer">github.com</a></p>
+                      </div>:
+                        <AboutRepos
+                          repoList = {repoList}
+                          getMonth = {this.getMonth}
+                          colorLanguage = {this.colorLanguage}
+                        />
+                      }
+                    </div>  
+                  }
                 </div>
-                
-                <h2>Мои репозитории</h2>
-                <ol>
-                  {repoList.map(repo => (
-                    <li key = { repo.id }>
-                    <a href={ repo.html_url } className={styles.link} target='blank' >{ repo.name }</a>
-                    </li>
-                  ))}
-                </ol>
-              </div>  
-            }
-          </div>
-        }
-      </CardContent>
+              }
+            </div>
+          }
+        </div>
     );
   }
 }
-
 
 export default About;

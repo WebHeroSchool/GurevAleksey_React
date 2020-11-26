@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Fonts/Fonts.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Item.module.css'
@@ -17,16 +18,17 @@ class Item extends React.Component {
         <Switch
           color="primary"
           name="checkedB"
+          checked={isDone}
           onClick = {() => onClickDone(id)}
         />
 
-        <p className={
+        <textarea disabled  className={
           classnames({
             [styles.item]: true,
             [styles.done]: isDone
           })
           }>{ item }
-        </p>
+        </textarea >
         
         <IconButton style={{ padding: 7}} aria-label="delete"
           onClick = {() => onClickRemove(id)} 
